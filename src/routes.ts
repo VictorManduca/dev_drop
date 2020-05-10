@@ -1,9 +1,13 @@
 import { Router } from 'express'
 
-import * as filesController from './controllers/files'
+import FilesController from './app/controllers/files'
 
 const router = Router()
 
-router.get('/', filesController.show)
+router.get('/files', FilesController.index)
+router.get('/files/:id', FilesController.show)
+router.post('/files', FilesController.store)
+router.put('/files/:id', FilesController.update)
+router.delete('/files/:id', FilesController.destroy)
 
 export default router
