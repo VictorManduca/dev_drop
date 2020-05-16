@@ -1,6 +1,12 @@
 import { Response } from 'express'
 
 class StatusResponse {
+  created (res: Response, id: object): void {
+    res.status(201).json({
+      id: id
+    })
+  }
+
   ok (res: Response, data: object): void {
     res.status(200).json({
       data
