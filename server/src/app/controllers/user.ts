@@ -1,8 +1,9 @@
 import { Request, Response } from 'express'
 
+import Usuario from '../resources/services/user'
 import StatusResponse from '../resources/utils/responses'
 
-class FilesController {
+class UserController {
   index(req: Request, res: Response): void {
     StatusResponse.emptyOk(res)
   }
@@ -11,8 +12,15 @@ class FilesController {
     StatusResponse.emptyOk(res)
   }
 
-  store(req: Request, res: Response): void {
-    StatusResponse.emptyOk(res)
+  store(req: Request, res: Response): Promise<any> {
+    const body = {
+      ...req.body
+    }
+
+    return Usuario.createUser(body).then((createdUser) => {
+      console.info({ createdUser })
+      return StatusResponse.emptyOk(res)
+    })
   }
 
   update(req: Request, res: Response): void {
@@ -24,4 +32,4 @@ class FilesController {
   }
 }
 
-export default new FilesController()
+export default new UserController()
