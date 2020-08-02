@@ -9,7 +9,7 @@ import morgan from 'morgan'
 import routes from './routes.js'
 
 const app = express()
-const port = process.env.port
+const port = process.env.PORT
 
 app.use(morgan('dev'))
 app.use(cors())
@@ -31,9 +31,7 @@ app.use(
 app.use(express.json())
 app.use(routes)
 
-const listener = app.listen(port, _ => console.info(`Server running on the port ${ port }`))
+export const listener = app.listen(port, _ => console.info(`Server running on the port ${ port }`))
   .on("error", err => console.info(`on error handler: ${ err }`));
 
 process.on("uncaughtException", err => console.info(`process.on handler: ${ err }`))
-
-module.exports = listener;

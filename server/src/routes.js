@@ -1,4 +1,6 @@
-import { Router } from 'express'
+import express from 'express'
 
-const routes = Router()
+const routes = express.Router()
+
+export default routes
 
