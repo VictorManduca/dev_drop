@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -24,7 +24,7 @@ USE `DropDB`;
 
 DROP TABLE IF EXISTS `arquivos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `arquivos` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `UsuarioID` int DEFAULT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `arquivos` (
   PRIMARY KEY (`ID`),
   KEY `arquivos` (`UsuarioID`),
   CONSTRAINT `arquivos_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `usuario` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `arquivos` (
 
 DROP TABLE IF EXISTS `categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `categoria` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `ArquivoID` int DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE `categoria` (
   CONSTRAINT `categoria_ibfk_1` FOREIGN KEY (`ArquivoID`) REFERENCES `arquivos` (`ID`),
   CONSTRAINT `categoria_ibfk_2` FOREIGN KEY (`UsuarioID`) REFERENCES `usuario` (`ID`),
   CONSTRAINT `categoria_ibfk_3` FOREIGN KEY (`TipoCategoriaID`) REFERENCES `tipo_categoria` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,13 +64,13 @@ CREATE TABLE `categoria` (
 
 DROP TABLE IF EXISTS `planos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `planos` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) DEFAULT NULL,
   `Preco` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,13 +79,13 @@ CREATE TABLE `planos` (
 
 DROP TABLE IF EXISTS `tipo_categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `tipo_categoria` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Indice` int DEFAULT NULL,
   `Descricao` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `tipo_categoria` (
 
 DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) DEFAULT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE `usuario` (
   `Senha` varchar(255) DEFAULT NULL,
   `Token` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ CREATE TABLE `usuario` (
 
 DROP TABLE IF EXISTS `vinculo_planos_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `vinculo_planos_usuario` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `UsuarioID` int DEFAULT NULL,
@@ -121,7 +121,7 @@ CREATE TABLE `vinculo_planos_usuario` (
   KEY `PlanosID` (`PlanosID`),
   CONSTRAINT `vinculo_planos_usuario_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `usuario` (`ID`),
   CONSTRAINT `vinculo_planos_usuario_ibfk_2` FOREIGN KEY (`PlanosID`) REFERENCES `planos` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +130,7 @@ CREATE TABLE `vinculo_planos_usuario` (
 
 DROP TABLE IF EXISTS `vinculo_usuario_pagamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `vinculo_usuario_pagamento` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `VinculoPlanoUsuarioID` int DEFAULT NULL,
@@ -138,7 +138,7 @@ CREATE TABLE `vinculo_usuario_pagamento` (
   PRIMARY KEY (`ID`),
   KEY `VinculoPlanoUsuarioID` (`VinculoPlanoUsuarioID`),
   CONSTRAINT `vinculo_usuario_pagamento_ibfk_1` FOREIGN KEY (`VinculoPlanoUsuarioID`) REFERENCES `vinculo_planos_usuario` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
