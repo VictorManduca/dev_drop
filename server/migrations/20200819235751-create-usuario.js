@@ -16,9 +16,6 @@ module.exports = {
       },
       senha: {
         type: Sequelize.STRING
-      },
-      token: {
-        type: Sequelize.STRING
       }
     });
   },

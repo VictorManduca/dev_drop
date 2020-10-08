@@ -8,14 +8,12 @@
   "examples": [{
     "nome": "João das Neves",
     "email": "joao.neves@gmail.com",
-    "senha": "sabeNada",
-    "token": "tokenDeAcesso"
+    "senha": "sabeNada"
   }],
   "required": [
     "nome",
     "email",
-    "senha",
-    "token"
+    "senha"
   ],
   "properties": {
     "nome": {
@@ -46,16 +44,6 @@
       "default": "",
       "examples": [
         "sabeNada"
-      ]
-    },
-    "token": {
-      "$id": "#/properties/token",
-      "type": "string",
-      "title": "The token schema",
-      "description": "An explanation about the purpose of this instance.",
-      "default": "",
-      "examples": [
-        "tokenDeAcesso"
       ]
     }
   },
