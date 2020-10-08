@@ -2,7 +2,7 @@
 
 import * as callback from '../services/callback'
 import { validate } from '../services/functions'
-import models from '../../models'
+import { saveUser, allUsers, oneUser, updateUser, deleteUser } from '../../repository/user'
 import userSchema from '../schemas/user-schema.json'
 
 export async function create(req, res, next) {
@@ -13,7 +13,11 @@ export async function create(req, res, next) {
 		if (validator !== true)
 			return callback.badRequest(res, validator)
 
-		const user = await models.usuario.create(body)
+		const checkExistentUser = await oneUser({ email: body.email, senha: body.senha })
+		if (checkExistentUser)
+			return callback.badRequest(res, 'User already exists')
+
+		const user = await saveUser(body)
 
 		return callback.created(res, user.dataValues.id)
 	} catch (error) {
@@ -23,7 +27,7 @@ export async function create(req, res, next) {
 
 export async function all(req, res, next) {
 	try {
-		const users = await models.usuario.findAll()
+		const users = await allUsers()
 
 		if (users.length == 0)
 			return callback.withData(res, [])
@@ -37,9 +41,9 @@ export async function all(req, res, next) {
 export async function one(req, res, next) {
 	try {
 		const { id } = req.params
-		const user = await models.usuario.findOne({ where: { id: id } })
+		const user = await oneUser({ id: id })
 
-		if (!user.dataValues)
+		if (!user)
 			return callback.withData(res, [])
 
 		return callback.withData(res, user.dataValues)
@@ -57,7 +61,7 @@ export async function update(req, res, next) {
 		if (validator !== true)
 			return callback.badRequest(res, validator)
 
-		await models.usuario.update(body, { where: { id: id } })
+		await updateUser(body, { id: id })
 		return callback.emptyOk(res)
 	} catch (error) {
 		return callback.badRequest(res, error.message)
@@ -68,7 +72,7 @@ export async function destroy(req, res, next) {
 	try {
 		const { id } = req.params
 
-		await models.usuario.destroy({ where: { id: id } })
+		await deleteUser({ id: id })
 		return callback.emptyOk(res)
 	} catch (error) {
 		return callback.badRequest(res, error.message)

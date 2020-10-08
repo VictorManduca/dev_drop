@@ -1,7 +1,7 @@
 'use strict'
 
 export function badRequest(res, error) {
-	return res.status(400).json(error).send()
+	return res.status(400).json({ errorMessage: error }).send()
 }
 
 export function created(res, id) {
