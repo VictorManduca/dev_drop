@@ -1,5 +1,4 @@
-import dotenv from 'dotenv'
-dotenv.config()
+require('dotenv').config()
 
 module.exports = {
   username: process.env.db_user,
