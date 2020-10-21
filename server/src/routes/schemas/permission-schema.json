@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "http://example.com/example.json",
+	"type": "object",
+	"title": "The root schema",
+	"description": "The root schema comprises the entire JSON document.",
+	"default": {},
+	"examples": [{
+		"usuarioId": 1,
+		"eAdministrador": true
+	}],
+	"required": [
+		"usuarioId",
+		"eAdministrador"
+	],
+	"properties": {
+		"usuarioId": {
+			"$id": "#/properties/usuarioId",
+			"type": "integer",
+			"title": "The usuarioId schema",
+			"description": "An explanation about the purpose of this instance.",
+			"default": 0,
+			"examples": [
+				1
+			]
+		},
+		"eAdministrador": {
+			"$id": "#/properties/eAdministrador",
+			"type": "integer",
+			"title": "The eAdministrador schema",
+			"description": "An explanation about the purpose of this instance.",
+			"default": 0,
+			"examples": [
+				1
+			]
+		}
+	},
+	"additionalProperties": false
+}

@@ -7,7 +7,7 @@ import logger from 'morgan'
 
 import router from './routes'
 
-const port = process.env.port
+const port = process.env.PORT
 const app = express()
 
 app.use(logger('dev'))

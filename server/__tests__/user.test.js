@@ -1,11 +1,14 @@
-require('dotenv').config()
+jest.setTimeout(30000)
+
 import supertest from 'supertest'
 
 import index from '../src/index'
 import { buildUserPayload } from './resources/user'
 
-process.env.port = 50100
-jest.setTimeout(3000)
+beforeEach(() => {
+	jest.resetModules()
+	process.env.PORT = 50100
+})
 
 describe('Test routines', () => {
 	it('should go well', async done => {
@@ -59,13 +62,13 @@ describe('Test routines', () => {
 			.then(response => {
 				expect(response.statusCode).toBe(200)
 				expect(response.body.data.length).toBe(0)
-
-				done()
 			})
+
+		await done()
 	})
 })
 
-afterAll(done => {
+afterAll(async _ => {
 	process.env.PORT = 50100
-	index.close(done)
+	await index.close()
 })

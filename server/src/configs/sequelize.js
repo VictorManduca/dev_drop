@@ -1,12 +1,12 @@
 require('dotenv').config()
 
 module.exports = {
-  username: process.env.db_user,
-  database: process.env.db_name,
-  host: process.env.db_host,
-  port: process.env.db_port,
-  dialect: 'mysql',
-  define: {
-    timestamps: false
-  }
+	username: process.env.DB_USER,
+	database: process.env.DB_NAME,
+	host: process.env.DB_HOST,
+	port: process.env.DB_PORT,
+	dialect: 'mysql',
+	define: {
+		timestamps: false
+	}
 }
