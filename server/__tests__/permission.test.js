@@ -1,15 +1,10 @@
-jest.setTimeout(30000)
+jest.setTimeout(10000)
 
 import supertest from 'supertest'
 
-import index from '../src/index'
+import index from '../src/app'
 import { buildUserPayload } from './resources/user'
 import { buildPermissionPayload } from './resources/permission'
-
-beforeEach(() => {
-	jest.resetModules()
-	process.env.PORT = 50101
-})
 
 describe('Test routines', () => {
 	it('should go well', async done => {
@@ -78,8 +73,6 @@ describe('Test routines', () => {
 			.then(response => {
 				expect(response.statusCode).toBe(200)
 				expect(response.body.data.length).toBe(0)
-
-				done()
 			})
 
 		await supertest(index)
@@ -87,13 +80,8 @@ describe('Test routines', () => {
 			.then(response => {
 				expect(response.statusCode).toBe(200)
 				expect(response.body.data.length).toBe(0)
+
+				done()
 			})
-
-		await done()
 	})
-})
-
-afterAll(async done => {
-	process.env.PORT = 50101
-	await index.close(done)
 })
