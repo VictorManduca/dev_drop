@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('permissao', {
+    await queryInterface.createTable('arquivo', {
       ID: {
         allowNull: false,
         autoIncrement: true,
@@ -12,15 +12,21 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      eAdministrador: {
+      Arquivo: {
+        type: Sequelize.BLOB('long')
+      },
+      eFavorito: {
         type: Sequelize.TINYINT
+      },
+      Nome: {
+        type: Sequelize.STRING
       }
     })
     .then(async _ => {
-      return await queryInterface.addConstraint('permissao', {
+      return await queryInterface.addConstraint('arquivo', {
         type: 'foreign key',
         fields: ['UsuarioID'],
-        name: 'permissao_UsuarioID_fk',
+        name: 'arquivo_UsuarioID_fk',
         references: {
           table: 'usuario',
           field: 'ID'
@@ -29,6 +35,6 @@ module.exports = {
     })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('permissao');
+    await queryInterface.dropTable('arquivo');
   }
 };

@@ -1,0 +1,63 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "http://example.com/example.json",
+	"type": "object",
+	"title": "The root schema",
+	"description": "The root schema comprises the entire JSON document.",
+	"default": {},
+	"examples": [{
+		"usuarioId": 1,
+		"eFavorito": 0,
+		"nome": "festa casamento",
+		"arquivo": "base64"
+	}],
+	"required": [
+		"usuarioId",
+		"eFavorito",
+		"nome",
+		"arquivo"
+	],
+	"properties": {
+		"usuarioId": {
+			"$id": "#/properties/usuarioId",
+			"type": "integer",
+			"title": "The usuarioId schema",
+			"description": "An explanation about the purpose of this instance.",
+			"default": 0,
+			"examples": [
+				1
+			]
+		},
+		"eFavorito": {
+			"$id": "#/properties/eFavorito",
+			"type": "integer",
+			"title": "The eFavorito schema",
+			"description": "An explanation about the purpose of this instance.",
+			"default": 0,
+			"examples": [
+				0
+			]
+		},
+		"nome": {
+			"$id": "#/properties/nome",
+			"type": "string",
+			"title": "The nome schema",
+			"description": "An explanation about the purpose of this instance.",
+			"default": "",
+			"examples": [
+				"festa casamento"
+			]
+		},
+		"arquivo": {
+			"$id": "#/properties/arquivo",
+			"type": "string",
+			"title": "The arquivo schema",
+			"description": "An explanation about the purpose of this instance.",
+			"default": "",
+			"examples": [
+				"base64"
+			]
+		}
+	},
+	"additionalProperties": false
+}
