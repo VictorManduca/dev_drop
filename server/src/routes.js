@@ -4,6 +4,7 @@ import * as user from './routes/user/user-controller'
 import * as permission from './routes/permission/permission-controller'
 import * as category from './routes/category/category-controller'
 import * as file from './routes/file/file-controller'
+import * as folder from './routes/folder/folder-controller'
 
 const router = express.Router()
 
@@ -30,5 +31,11 @@ router.get('/drop/file', file.all)
 router.get('/drop/file/:id', file.one)
 router.put('/drop/file/:id', file.update)
 router.delete('/drop/file/:id', file.destroy)
+
+router.post('/drop/folder', folder.create)
+router.get('/drop/folder', folder.all)
+router.get('/drop/folder/:id', folder.one)
+router.put('/drop/folder/:id', folder.update)
+router.delete('/drop/folder/:id', folder.destroy)
 
 export default router

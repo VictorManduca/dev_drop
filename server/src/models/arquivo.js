@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class arquivo extends Model {
     /**
@@ -12,16 +10,19 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  arquivo.init({
-    UsuarioID: DataTypes.INTEGER,
-    Arquivo: DataTypes.BLOB('long'),
-    eFavorito: DataTypes.TINYINT,
-    Nome: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'arquivo',
-    freezeTableName: true
-  });
-  return arquivo;
-};
+  }
+  arquivo.init(
+    {
+      UsuarioID: DataTypes.INTEGER,
+      Arquivo: DataTypes.BLOB('long'),
+      eFavorito: DataTypes.TINYINT,
+      Nome: DataTypes.STRING
+    },
+    {
+      sequelize,
+      modelName: 'arquivo',
+      freezeTableName: true
+    }
+  )
+  return arquivo
+}
