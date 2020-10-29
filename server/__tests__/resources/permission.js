@@ -1,5 +1,5 @@
 export function buildPermissionPayload() {
-	return {
+  return {
     usuarioId: 1,
     eAdministrador: 1
   }

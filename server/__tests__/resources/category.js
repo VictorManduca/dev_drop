@@ -1,5 +1,5 @@
 export function buildCategoryPayload() {
-	return {
+  return {
     indice: 1,
     descricao: 'pessoal'
   }
