@@ -48,6 +48,22 @@ export async function one(req, res, next) {
   }
 }
 
+export async function login(req, res) {
+  try {
+    const { email, password } = req.body
+
+    const user = await oneUser({ email: email, senha: password })
+
+    if (!user) {
+      return callback.noContent(res)
+    }
+
+    return callback.accepted(res)
+  } catch (error) {
+    return callback.badRequest(res, error.message)
+  }
+}
+
 export async function update(req, res, next) {
   try {
     const { id } = req.params

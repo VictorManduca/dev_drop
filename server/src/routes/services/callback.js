@@ -15,3 +15,11 @@ export function withData(res, data) {
 export function emptyOk(res) {
   return res.status(200).send()
 }
+
+export function noContent(res) {
+  return res.status(204).send()
+}
+
+export function accepted(res) {
+  return res.status(202).send()
+}
