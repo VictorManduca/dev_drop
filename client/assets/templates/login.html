@@ -1,52 +1,46 @@
-<div>
-  <b-card-group columns>
-    <b-card>
-      <b-form action>
-        <img class="img_theme centralize-img" src="../../static/blue_box.png" />
-        <h2 class="title_theme centralize-text">Sign In</h2>
-
-        <div>
-          <label>Email</label>
-          <input
-            class="input_theme"
-            name="emailLogin"
-            placeholder="Email"
-            required
-            type="email"
-          />
-
-          <label class="mt-2">Password</label>
-          <input
-            name="passwordLogin"
-            class="input_theme"
-            placeholder="Password"
-            required
-            type="password"
-          />
-
-          <label class="mt-2"> <input type="checkbox" /> Remember-me</label>
-
-          <button class="button_theme" type="submit">Login</button>
+<div class="container-fluid">
+  <div class="row">
+    <form class="form1 col-xl-4 col-lg-5 col-md-6 col-sm-12" action="">
+      <div class="card">
+        <div class="card-top">
+          <img class="img_login" src="../../static/blue_box.png" alt="">
+          <h2 class="titulo">Sign In</h2>
         </div>
-      </b-form>
-    </b-card>
 
-    <b-card>
-      <b-form action>
-        <img class="img_theme centralize-img" src="../../static/blue_box.png" />
-        <h2 class="title_theme centralize-text">Sign Up</h2>
+        <div class="card-group">
+          <label>Email</label>
+          <input type="email" v-model="email" placeholder="Email" required>
+        </div>
 
-        <label>Email</label>
-        <input
-          class="input_theme"
-          name="email"
-          placeholder="Email"
-          required
-          type="email"
-        />
+        <div class="card-group">
+          <label>Password</label>
+          <input type="password" v-model="password" placeholder="Password" required>
+        </div>
 
-        <button class="button_theme mt-4" type="submit">Continue</button>
-      </b-form>
-    </b-card>
-  </b-card-group>
+        <div class="card-group btn">
+          <button type="button" @click="login">Login</button>
+        </div>
+
+      </div>
+    </form>
+
+    <form class="form1 col-xl-4 col-lg-5 col-md-6 col-sm-12" action="">
+      <div class="card">
+        <div class="card-top">
+          <img class="img_login" src="../../static/blue_box.png" alt="">
+          <h2 class="titulo">Sign Up</h2>
+        </div>
+
+        <div class="card-group">
+          <label>Email</label>
+          <input type="email" v-model="emailNew" placeholder="Email" required>
+        </div>
+        <br>
+
+        <div class="card-group btn">
+          <button type="button">Continue</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
