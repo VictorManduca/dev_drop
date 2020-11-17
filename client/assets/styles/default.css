@@ -1,0 +1,48 @@
+body {
+  background-color: rgb(76, 76, 196);
+  font-family: sans-serif;
+}
+
+.card {
+  box-shadow: #cccccc;
+  background-color: cornsilk;
+  margin: 50% 0 0 50%;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.img_theme {
+  width: 80px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #ccc;
+}
+
+.centralize-text {
+  margin-left: 40%;
+}
+
+.centralize-img {
+  margin-left: 43%;
+}
+
+.title_theme {
+  color: darkgrey;
+}
+
+.input_theme {
+  border-radius: 5px;
+  outline: 0;
+  width: 100%;
+  height: 25px;
+  padding: 5px;
+}
+
+.button_theme {
+  background-image: linear-gradient(to right, darkslateblue, rgb(63, 63, 187));
+  width: 100%;
+  padding: 10px;
+  border: 0px;
+  outline: 0px;
+  border-radius: 20px;
+  color: white;
+}

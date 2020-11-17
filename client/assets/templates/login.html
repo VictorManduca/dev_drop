@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <form class="form1 col-xl-4 col-lg-5 col-md-6 col-sm-12" action="">
+      <div class="card">
+        <div class="card-top">
+          <img class="img_login" src="../../static/blue_box.png" alt="">
+          <h2 class="titulo">Sign In</h2>
+        </div>
+
+        <div class="card-group">
+          <label>Email</label>
+          <input type="email" v-model="email" placeholder="Email" required>
+        </div>
+
+        <div class="card-group">
+          <label>Password</label>
+          <input type="password" v-model="password" placeholder="Password" required>
+        </div>
+
+        <div class="card-group btn">
+          <button type="button" @click="login">Login</button>
+        </div>
+
+      </div>
+    </form>
+
+    <form class="form1 col-xl-4 col-lg-5 col-md-6 col-sm-12" action="">
+      <div class="card">
+        <div class="card-top">
+          <img class="img_login" src="../../static/blue_box.png" alt="">
+          <h2 class="titulo">Sign Up</h2>
+        </div>
+
+        <div class="card-group">
+          <label>Email</label>
+          <input type="email" v-model="emailNew" placeholder="Email" required>
+        </div>
+        <br>
+
+        <div class="card-group btn">
+          <button type="button">Continue</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
