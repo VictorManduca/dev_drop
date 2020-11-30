@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <img class="img_new_account" src="img/maquina.png" alt="">
+      
+      
+
+        <form class="form_new_account" action="">
+            <div class="card_new_account">
+                <div class="card-top">
+                  <h2 class="titulo">New Account</h2>
+                  <h3>OR <a href="#">login</a></h3>
+                </div>
+
+                <div class="card-account">
+                  <label>Name</label>
+                  <input type="text" v-model="name" placeholder="Name" required>
+                </div>
+
+                <div class="card-account">
+                  <label>Last Name</label>
+                  <input type="text" v-model="last_name" placeholder="Last Name" required>
+                </div>
+
+                <div class="card-account">
+                  <label>Email</label>
+                  <input type="email" v-model="email" placeholder="Email" required>
+                </div>
+
+                <div class="card-account">
+                  <label>Password</label>
+                  <input type="password" v-model="senha" placeholder="Password" required>
+                </div>
+
+                <div class="card-terms">
+                  <label><input type="checkbox" required>I have read and accept all DevDrop privacy terms</label>
+                </div>
+
+                <div class="card-group btn">
+                  <button @click="Continue">Continue</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+  </div>

@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(76, 76, 196);
+    font-family: sans-serif;
+  }
+  
+  .form_welcome {
+      width: 400px;
+      margin: auto;
+      padding-top: 40px;
+  }
+  
+  .card-top {
+    text-align: center;
+  }
+  
+  .card {
+    box-shadow: #cccccc;
+    background-color: cornsilk;
+    padding: 30px;
+    border-radius: 5px;
+  }
+  
+  .titulo {
+    color: darkgrey;
+  }
+  
+  .img_login {
+      border-radius: 10px;
+      width: 80px;
+      box-shadow: 1px 1px 5px #ccc;
+  }
