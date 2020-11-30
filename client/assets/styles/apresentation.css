@@ -1,0 +1,78 @@
+body {
+  background-color: rgb(76, 76, 196);
+  font-family: sans-serif;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-top {
+  text-align: center;
+}
+
+.card_apresentation {
+    background-image:linear-gradient(to right, rgb(63, 63, 187), darkslateblue);
+    box-shadow: #cccccc;
+    background-color: cornsilk;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.form_in_up {
+    background-image:linear-gradient(to right, darkslateblue, rgb(63, 63, 187));
+    width: 400px;
+    display: inline-block;
+    margin-left: 400px;
+    padding-top: 6px;
+    text-emphasis-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.form_apresentation {
+    width: 400px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 90px;
+    padding-top: 40px;
+}
+
+.img_apresentation {
+    background-color: #ccc;
+    border-radius: 20px;
+    width: 150px;
+    box-shadow: 1px 1px 5px #ccc;
+}
+
+.registro_button {
+    background-image:linear-gradient(to right, rgb(63, 63, 187), rgb(43, 14, 231));
+    width: 340px;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    border: 0px;
+    outline: 0px;
+}
+
+a:link {
+    color:#ff0000;
+    text-decoration:none;
+  }
+  a:visited {
+    color:#999999;
+    text-decoration:none;
+  }
+  a:hover {
+    color:#000000;
+    text-decoration:none;
+  }
+  a:active {
+    color:#00ff00;
+    text-decoration:none;
+    /*background-color:#000000;*/
+  }

@@ -1,0 +1,91 @@
+body {
+    background-color: rgb(76, 76, 196);
+    font-family: sans-serif;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_new_account {
+    border-radius: 15px;
+    box-shadow: rgb(119, 68, 121);
+    border-color: rgb(119, 68, 121);
+    display: inline-block;
+    padding-top: 20px;
+    width: 500px;
+    height: 500px;
+}
+.form_new_account {
+    margin: auto;
+    background-color: black;
+    display: inline-block;
+    margin-top: 30px;
+
+}
+
+.form_new_account {
+    background-image:linear-gradient(to right, rgb(71, 71, 179), rgb(43, 14, 231));
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.card-account {
+    margin-bottom: 10px;
+}
+
+.card-account>label {
+    color: #ccc;
+    width: 300px;
+    display: block;
+}
+
+.card-account>input {
+    border-radius: 5px;
+    outline: 0;
+    width: 325px;
+    height: 25px;
+    padding: 5px;
+}
+
+.card-terms {
+    color: #ccc;
+}
+
+@media screen and (max-width: 992px){
+    .img_new_account{
+        width: 250px;
+        height: 250px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .img_new_account{
+        width: 250px;
+        height: 250px;
+        margin: auto;
+    }
+}
+
+a:link {
+    color:#ff0000;
+    text-decoration:none;
+  }
+  a:visited {
+    color:#999999;
+    text-decoration:none;
+  }
+  a:hover {
+    color:#000000;
+    text-decoration:none;
+  }
+  a:active {
+    color:#00ff00;
+    text-decoration:none;
+    /*background-color:#000000;*/
+  }
