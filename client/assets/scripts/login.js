@@ -13,7 +13,8 @@ export async function login() {
   } catch (error) {
     return Promise.reject(`[scripts|login] ${ error }`)
   }
+}
 
-
-
+export async function goNewAccount() {
+  return this.$router.push({ name: 'new-account' })
 }

@@ -1,91 +1,75 @@
 body {
-    background-color: rgb(76, 76, 196);
-    font-family: sans-serif;
+  background-color: rgb(76, 76, 196);
+  font-family: sans-serif;
+}
+
+div div.card:last-child input {
+  margin-bottom: 5%;
 }
 
 .container {
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .img_new_account {
-    border-radius: 15px;
-    box-shadow: rgb(119, 68, 121);
-    border-color: rgb(119, 68, 121);
-    display: inline-block;
-    padding-top: 20px;
-    width: 500px;
-    height: 500px;
+  border-radius: 15px;
+  box-shadow: rgb(119, 68, 121);
+  border-color: rgb(119, 68, 121);
+  display: inline-block;
+  padding-top: 20px;
+  width: 500px;
+  height: 500px;
 }
-.form_new_account {
+
+.card {
+  box-shadow: #cccccc;
+  background-color: cornsilk;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.card > label {
+  color: #000;
+  width: 300px;
+  display: block;
+}
+
+.card > input {
+  border-radius: 5px;
+  outline: 0;
+  width: 325px;
+  height: 25px;
+  padding: 5px;
+}
+
+.card > button {
+  background-image: linear-gradient(to right, darkslateblue, rgb(63, 63, 187));
+  color: white;
+  border-radius: 20px;
+  width: 340px;
+  padding: 10px;
+  border: 0px;
+  outline: 0px;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+@media screen and (max-width: 992px) {
+  .img_new_account {
+    width: 250px;
+    height: 250px;
     margin: auto;
-    background-color: black;
-    display: inline-block;
-    margin-top: 30px;
-
-}
-
-.form_new_account {
-    background-image:linear-gradient(to right, rgb(71, 71, 179), rgb(43, 14, 231));
-    padding: 30px;
-    border-radius: 5px;
-}
-
-.card-account {
-    margin-bottom: 10px;
-}
-
-.card-account>label {
-    color: #ccc;
-    width: 300px;
-    display: block;
-}
-
-.card-account>input {
-    border-radius: 5px;
-    outline: 0;
-    width: 325px;
-    height: 25px;
-    padding: 5px;
-}
-
-.card-terms {
-    color: #ccc;
-}
-
-@media screen and (max-width: 992px){
-    .img_new_account{
-        width: 250px;
-        height: 250px;
-        margin: auto;
-    }
-}
-
-@media screen and (max-width: 768px){
-    .img_new_account{
-        width: 250px;
-        height: 250px;
-        margin: auto;
-    }
-}
-
-a:link {
-    color:#ff0000;
-    text-decoration:none;
   }
-  a:visited {
-    color:#999999;
-    text-decoration:none;
+}
+
+@media screen and (max-width: 768px) {
+  .img_new_account {
+    width: 250px;
+    height: 250px;
+    margin: auto;
   }
-  a:hover {
-    color:#000000;
-    text-decoration:none;
-  }
-  a:active {
-    color:#00ff00;
-    text-decoration:none;
-    /*background-color:#000000;*/
-  }
+}

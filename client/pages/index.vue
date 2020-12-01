@@ -5,20 +5,21 @@
 </style>
 
 <script>
-import { login } from '../assets/scripts/login'
+import { login, goNewAccount } from '../assets/scripts/login'
 import { callLoginApi } from '../assets/scripts/api/call-login'
 
 export default {
-	data: () => {
-		return {
-			email: null,
-			password: null,
-			emailNew: null
-		}
-	},
-	methods: {
-		login,
-		callLoginApi
-	}
+  data: () => {
+    return {
+      email: null,
+      password: null,
+      emailNew: null,
+    }
+  },
+  methods: {
+    login,
+    callLoginApi,
+    goNewAccount,
+  },
 }
 </script>
