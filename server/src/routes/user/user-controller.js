@@ -12,8 +12,8 @@ export async function create(req, res, next) {
     const validator = validate(userSchema, body)
     if (validator !== true) return callback.badRequest(res, validator)
 
-    const checkExistentUser = await oneUser({ email: body.email, senha: body.senha })
-    if (checkExistentUser) return callback.badRequest(res, 'User already exists')
+    const checkExistentUserEmail = await oneUser({ email: body.email })
+    if (checkExistentUserEmail ) return callback.badRequest(res, 'User already exists')
 
     const user = await saveUser(body)
 
