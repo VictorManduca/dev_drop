@@ -6,7 +6,7 @@ export async function login() {
 
     if (responseApi.status == 202) { //status 200
       this.$toast.success('Successfully authenticated')
-      this.$router.push({name: 'welcome'})
+      this.$router.push({name: 'home'})
     } else {
       this.$toast.error('Something is wrong with your email or password')
     }

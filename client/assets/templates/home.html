@@ -1,0 +1,46 @@
+<div>
+
+    <div class="container_col1">
+        <div class="begin">
+            <img class="img_home" src="../../static/blue_box.png" alt="">
+            <h3 class="texto_begin">Begin</h3>
+            <div class="shared">
+                <h4>All files</h4>
+                <h4>Shared</h4>
+            </div>
+        </div>
+        <div class="bookmarks">
+            <h4>Send files</h4>
+            <h4>Send folder</h4>
+            <h4>Bookmarks</h4>
+        </div>
+    </div>
+
+    <div class="container_col2">
+        <div class="central">
+            <div class="div_new_folder">
+                <img class="new_folder" src="../../static/new-folder-9.png" v-on:click="createFolder" v-on:click.right="deleteFolder">
+            <!--sem label e sem <a>,só botão-->
+            </div>
+            <div class="div_folder">
+                <img class="folder" src="../../static/folder.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container_col3">
+        <div class="group">
+            <img class="img_group" src="../../static/group-icon.png" alt="">
+            <h2 class="texto_group">Groups</h2>
+            <h4>Group1</h4>
+            <h4>Group2</h4>
+            <h4>Group3</h4>
+
+            <div class="new_group">
+                <button class="new_group_btn" type="submit">New group</button>
+                <img class="img_new_group" src="../../static/add_group.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</div>
