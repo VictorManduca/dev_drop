@@ -9,7 +9,7 @@ export async function login() {
 
     if (responseApi.status == 200) {
       this.$toast.success('Successfully authenticated')
-      this.$localStorage.setItem('usuarioId', responseApi.body.data.id)
+      localStorage.setItem('usuarioId', responseApi.data.data.id)
       this.$router.push({ name: 'home' })
     } else {
       this.$toast.error('Something is wrong with your email or password')
