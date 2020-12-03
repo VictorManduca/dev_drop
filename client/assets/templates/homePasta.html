@@ -1,0 +1,25 @@
+<div>
+    <input 
+        ref="imput" 
+        type="file" 
+        class="d-none" 
+        accept="image/*" 
+        @change="handleFile($event)"
+    >
+
+    <button 
+        type="button" 
+        v-on:click="createFile" 
+        v-on:click.right="deleteFile">New File
+    </button>
+
+    <div v-if="form.image">
+        {{ form.image.name }}
+        <button 
+            type="button"
+            @click="form.image = null">
+
+            <!--<i class="fa fa-trash text-danger"></i>-->
+        </button>
+    </div>
+</div>

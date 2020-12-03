@@ -13,7 +13,9 @@ export default{
     return {
       //todas as variáveis
       usuarioId: null,
-      arquivoId: null
+      arquivoId: null,
+      tipoCategoriaId: null,
+      nome: null
     }
   },
   //colocar todas as funções

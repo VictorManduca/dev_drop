@@ -4,9 +4,9 @@
 @import '../assets/styles/apresentation.css';
 </style>
 
-<!--<script>
+<script>
 import { apresentation } from '../assets/scripts/apresentation'
-import { callApresentationApi } from '../assets/scripts/api/call-apresentation'
+
 
 export default {
 	data: () => {
@@ -15,7 +15,6 @@ export default {
 	},
 	methods: {
 		apresentation,
-		callApresentationApi
 	}
 }
-</script>-->
+</script>
