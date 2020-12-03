@@ -21,15 +21,9 @@ export async function createFile() {
     
 }
 
-handleFile({target});
-{
-    this.form.image = ev.target.files[0]
-}
-
-
 export async function deleteFile() {
     try{
-      const responseApi = await callDeleteFileApi({ usuarioId: this.usuarioId })
+      const responseApi = await callDeleteFileApi({ fileId })
 
       if (responseApi.status == 201) {
         this.$toast.success('File Deleted')
