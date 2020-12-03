@@ -13,7 +13,7 @@ export async function create(req, res, next) {
     if (validator !== true) return callback.badRequest(res, validator)
 
     const checkExistentUserEmail = await oneUser({ email: body.email })
-    if (checkExistentUserEmail ) return callback.badRequest(res, 'User already exists')
+    if (checkExistentUserEmail) return callback.badRequest(res, 'User already exists')
 
     const user = await saveUser(body)
 
@@ -58,7 +58,7 @@ export async function login(req, res) {
       return callback.noContent(res)
     }
 
-    return callback.accepted(res)
+    return callback.withData(res, { id: user.dataValues.id })
   } catch (error) {
     return callback.badRequest(res, error.message)
   }
