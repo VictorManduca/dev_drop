@@ -4,7 +4,7 @@ import { callDeleteFolderApi } from './api/call-new-folder'
 
 export async function createFolder() {
     try{ //função que chama API
-        const responseApi = await callNewFolderApi({ usuario: this.usuarioId, arquivo: this.arquivoId, categoria: this.tipoCategoriaId, nome: this.nome })
+        const responseApi = await callNewFolderApi({ usuarioId: this.usuario, arquivoId: this.arquivo, tipoCategoriaId: this.categoria, nome: this.nome })
 
         if (responseApi.status == 201) {
             this.$toast.success('Folder Created')
@@ -21,7 +21,7 @@ export async function createFolder() {
 
 export async function deleteFolder() {
     try{
-      const responseApi = await callDeleteFolderApi({ id: this.id })
+      const responseApi = await callDeleteFolderApi({  })
 
       if (responseApi.status == 201) {
         this.$toast.success('Folder Deleted')
@@ -32,5 +32,13 @@ export async function deleteFolder() {
 
     } catch (error) {
       return Promise.reject(`[scripts|home] ${ error }`)
+  }
+}
+
+export function goHomePasta() {
+  try{
+    this.$router.push({ name: 'homePasta' })
+  } catch(error){
+    return Promise.reject(`[scripts|home] ${ error }`)
   }
 }

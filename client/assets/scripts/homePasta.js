@@ -21,7 +21,8 @@ export async function createFile() {
     
 }
 
-handleFile({target});{
+handleFile({target});
+{
     this.form.image = ev.target.files[0]
 }
 
