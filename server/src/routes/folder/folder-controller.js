@@ -28,15 +28,16 @@ export async function create(req, res) {
 
 export async function all(req, res) {
   try {
-    const folders = await folderRepository.allFolders()
+    const { userId } = req.params
+    const folders = await folderRepository.allFoldersWhere({ usuarioId: userId })
 
     if (folders.length === 0) {
       return callback.withData(res, [])
     }
 
-    return callback.withData(res, folders)
+    return await callback.withData(res, folders)
   } catch (error) {
-    return callback.badRequest(res, error.message)
+    return await callback.badRequest(res, error.message)
   }
 }
 

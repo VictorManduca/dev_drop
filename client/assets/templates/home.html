@@ -10,29 +10,12 @@
     </div>
 
     <div class="bookmarks">
-      <b-button v-on:click="modalFile = !modalFile">Send files</b-button>
       <b-button v-on:click="modelFolder = !modelFolder">Send folder</b-button>
 
-      <b-modal v-model="modalFile" title="BootstrapVue">
-        <b-form action="">
-          <input type="checkbox" v-model="favorite" checked />
-          <label>Favorite</label><br />
-
-          <label>Name</label>
-          <input v-model="name" /><br />
-
-          <label>File</label><br />
-          <input type="file" v-on:change="getFile" /><br />
-
-          <b-button type="button" v-on:click="createFile">Send File</b-button>
-        </b-form>
-      </b-modal>
-
-      <b-modal v-model="modelFolder" title="BootstrapVue">
+      <b-modal v-model="modelFolder" title="Create folder">
         <b-form action="">
           <label>Name</label>
           <input v-model="folderName" /><br />
-
           <b-button type="button" v-on:click="createFolder">
             Create Folder
           </b-button>
@@ -43,19 +26,14 @@
 
   <div class="container_col2">
     <div class="central">
-      <b-table :items="items"></b-table>
+      <b-table :items="items" :fields="fields"> </b-table>
 
       <div class="div_new_folder">
         <b-icon icon="folder-plus"></b-icon>
       </div>
 
       <div class="div_folder">
-        <img
-          class="folder"
-          src="../../static/folder.png"
-          alt=""
-          v-on:click="goHomeFolder"
-        />
+        <b-icon icon="folder-fill" v-on:click="goHomeFolder"></b-icon>
       </div>
     </div>
   </div>

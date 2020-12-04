@@ -5,23 +5,27 @@
 </style>
 
 <script>
-import { createFile, deleteFile } from '../assets/scripts/home-folder'
-import { callNewFileApi, callDeleteFileApi } from '../assets/scripts/api/call-file'
+import { createFile, deleteFile, getFile } from '../assets/scripts/home-folder'
 
-export default{
+import {
+  callNewFileApi,
+  callDeleteFileApi,
+} from '../assets/scripts/api/call-file'
+
+export default {
   data: () => {
     return {
-      //todas as variáveis
-      usuarioId: null,
-      eFavorito: null,
-      arquivo: null,
-      nome: null
+      userId: parseInt(localStorage.getItem('usuarioId')),
+      file: null,
+      favorite: null,
+      name: null,
     }
   },
-  //colocar todas as funções
   methods: {
     createFile,
     deleteFile,
+    getFile,
+
     callNewFileApi,
     callDeleteFileApi,
   },

@@ -1,48 +1,8 @@
-import { callNewFolderApi, callDeleteFolderApi } from './api/call-new-folder'
-import { callNewFileApi, callDeleteFileApi } from './api/call-file'
-
-export async function getFile(event) {
-  const file = event.target.files[0]
-
-  const result = await toBase64(file).catch((error) => Error(error))
-  if (result instanceof Error) {
-    console.error('Error: ', result.message)
-  } else {
-    this.file = result
-  }
-}
-
-const toBase64 = (file) =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader()
-
-    reader.readAsDataURL(file)
-    reader.onload = () => resolve(reader.result)
-    reader.onerror = (error) => reject(error)
-  })
-
-export async function createFile() {
-  try {
-    // tipoCategoriaIndice: this.modalFile == true ? 1 : 2,
-
-    const responseApi = await callNewFileApi({
-      usuarioId: this.userId,
-      eFavorito: this.favorite === true ? 1 : 0,
-      nome: this.name,
-      arquivo: this.file,
-    })
-
-    if (responseApi.status == 201) {
-      return this.$toast.success('File Created')
-      // this.$router.push({ name: 'login' })
-    } else {
-      return this.$toast.error('Something went wrong')
-    }
-  } catch (error) {
-    console.error({ error: `[scripts|home] ${error}` })
-    return this.$toast.error('Something went wrong')
-  }
-}
+import {
+  callNewFolderApi,
+  callAllUserFolders,
+  callDeleteFolderApi,
+} from './api/call-folder'
 
 export async function createFolder() {
   try {
@@ -70,6 +30,20 @@ export async function deleteFolder() {
     if (responseApi.status == 201) {
       this.$toast.success('Folder Deleted')
       this.$router.push({ name: 'home' })
+    } else {
+      this.$toast.error('Não deletada')
+    }
+  } catch (error) {
+    return Promise.reject(`[scripts|home] ${error}`)
+  }
+}
+
+export async function getAllFolders(userId) {
+  try {
+    const responseApi = await callAllUserFolders(userId)
+
+    if (responseApi.status == 200) {
+      return responseApi.data
     } else {
       this.$toast.error('Não deletada')
     }

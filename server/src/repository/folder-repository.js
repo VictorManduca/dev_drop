@@ -12,6 +12,10 @@ export async function allFolders() {
   return await models.pasta.findAll()
 }
 
+export async function allFoldersWhere(params) {
+  return await models.pasta.findAll({ where: params })
+}
+
 export async function oneFolder(params) {
   return await models.pasta.findOne({ where: params })
 }

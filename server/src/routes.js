@@ -35,7 +35,7 @@ router.put('/drop/file/:id', file.update)
 router.delete('/drop/file/:id', file.destroy)
 
 router.post('/drop/folder', folder.create)
-router.get('/drop/folder', folder.all)
+router.get('/drop/folder/all/user/:userId', folder.all)
 router.get('/drop/folder/:id', folder.one)
 router.put('/drop/folder/:id', folder.update)
 router.delete('/drop/folder/:id', folder.destroy)

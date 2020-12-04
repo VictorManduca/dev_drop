@@ -6,7 +6,7 @@
 
 <script>
 import { newAccount, goBack } from '../assets/scripts/new-account'
-import { callNewAccountApi } from '../assets/scripts/api/call-new-account'
+import { callNewAccountApi } from '../assets/scripts/api/call-account'
 
 export default {
   data: () => {

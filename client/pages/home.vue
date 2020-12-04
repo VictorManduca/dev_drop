@@ -8,15 +8,14 @@
 import {
   createFolder,
   deleteFolder,
-  createFile,
-  getFile,
+  getAllFolders,
   goHomeFolder,
 } from '../assets/scripts/home'
 
 import {
   callNewFolderApi,
   callDeleteFolderApi,
-} from '../assets/scripts/api/call-new-folder'
+} from '../assets/scripts/api/call-folder'
 
 export default {
   data: () => {
@@ -29,18 +28,34 @@ export default {
       favorite: null,
       name: null,
       folderName: null,
+      fields: [
+        {
+          key: 'id',
+          label: 'ID',
+        },
+        {
+          key: 'name',
+          label: 'Name',
+        },
+      ],
       items: [],
     }
   },
   methods: {
-    createFile,
-    getFile,
+    getAllFolders,
     goHomeFolder,
 
     createFolder,
     deleteFolder,
     callNewFolderApi,
     callDeleteFolderApi,
+  },
+  async beforeMount() {
+    const responseFoldersApi = await getAllFolders(this.userId)
+
+    console.info({ data: responseFoldersApi })
+
+    this.items = responseFoldersApi.data
   },
 }
 </script>

@@ -1,7 +1,15 @@
 <div>
-  <input ref="input" type="file" class="d-none" accept="image/*" />
+  <b-form action="">
+    <input type="checkbox" v-model="favorite" checked />
+    <label>Favorite</label><br />
 
-  <button type="button" v-on:click="createFile" v-on:click.right="deleteFile">
-    New File
-  </button>
+    <label>Name</label>
+    <input v-model="name" /><br />
+
+    <label>File</label><br />
+    <input type="file" v-on:change="getFile" /><br />
+
+    <b-button type="button" v-on:click="createFile">Send File</b-button>
+    <b-button type="button" v-on:click="goBack">Go back</b-button>
+  </b-form>
 </div>

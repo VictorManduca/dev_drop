@@ -9,6 +9,13 @@ export function callNewFolderApi(payload) {
   })
 }
 
+export function callAllUserFolders(userId) {
+  return axios({
+    method: 'GET',
+    url: `${environment.urlBase}/folder/all/user/${userId}`,
+  })
+}
+
 export function callDeleteFolderApi(folderId) {
   return axios({
     method: 'DELETE',

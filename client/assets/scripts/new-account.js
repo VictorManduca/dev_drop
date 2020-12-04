@@ -1,4 +1,4 @@
-import { callNewAccountApi } from './api/call-new-account'
+import { callNewAccountApi } from './api/call-account'
 
 export async function newAccount() {
   try {
