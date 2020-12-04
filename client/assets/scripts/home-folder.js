@@ -22,19 +22,12 @@ const toBase64 = (file) =>
 
 export async function createFile() {
   try {
-    console.info({
-      usuarioId: this.userId,
-      eFavorito: this.favorite === true ? 1 : 0,
-      nome: this.name,
-      arquivo: this.file,
-    })
-
     const responseApi = await callNewFileApi({
       usuarioId: this.userId,
       eFavorito: this.favorite === true ? 1 : 0,
       nome: this.name,
       arquivo: this.file,
-      pasta,
+      pastaId: parseInt(localStorage.getItem('folderId')),
     })
 
     if (responseApi.status == 201) {
@@ -43,14 +36,13 @@ export async function createFile() {
       return this.$toast.error('Something went wrong')
     }
   } catch (error) {
-    console.error({ error })
     console.error({ error: `[scripts|home] ${error}` })
     return this.$toast.error('Something went wrong')
   }
 }
 
 export async function goBack() {
-  this.$router.back()
+  return this.$router.back()
 }
 
 export async function deleteFile() {

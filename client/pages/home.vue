@@ -52,9 +52,6 @@ export default {
   },
   async beforeMount() {
     const responseFoldersApi = await getAllFolders(this.userId)
-
-    console.info({ data: responseFoldersApi })
-
     this.items = responseFoldersApi.data
   },
 }

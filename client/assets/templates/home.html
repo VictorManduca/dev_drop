@@ -16,6 +16,7 @@
         <b-form action="">
           <label>Name</label>
           <input v-model="folderName" /><br />
+
           <b-button type="button" v-on:click="createFolder">
             Create Folder
           </b-button>
@@ -26,7 +27,7 @@
 
   <div class="container_col2">
     <div class="central">
-      <b-table :items="items" :fields="fields">
+      <b-table :items="items" :fields="fields" @row-clicked="goHomeFolder">
         <template #cell(name)="data"> {{ data.item.Nome }} </template>
       </b-table>
 

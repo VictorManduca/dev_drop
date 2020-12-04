@@ -1,15 +1,19 @@
 <div>
-  <b-form action="">
-    <input type="checkbox" v-model="favorite" checked />
-    <label>Favorite</label><br />
+  <b-button v-on:click="modelFile = !modelFile">Send File</b-button>
+  <b-button type="button" v-on:click="goBack">Go back</b-button>
 
-    <label>Name</label>
-    <input v-model="name" /><br />
+  <b-modal v-model="modelFile" title="Send file">
+    <b-form action="">
+      <input type="checkbox" v-model="favorite" checked />
+      <label>Favorite</label><br />
 
-    <label>File</label><br />
-    <input type="file" v-on:change="getFile" /><br />
+      <label>Name</label>
+      <input v-model="name" /><br />
 
-    <b-button type="button" v-on:click="createFile">Send File</b-button>
-    <b-button type="button" v-on:click="goBack">Go back</b-button>
-  </b-form>
+      <label>File</label><br />
+      <input type="file" v-on:change="getFile" /><br />
+
+      <b-button type="button" v-on:click="createFile">Send</b-button>
+    </b-form>
+  </b-modal>
 </div>

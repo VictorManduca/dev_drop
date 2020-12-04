@@ -52,8 +52,9 @@ export async function getAllFolders(userId) {
   }
 }
 
-export async function goHomeFolder() {
+export async function goHomeFolder(item) {
   try {
+    localStorage.setItem('folderId', item.id)
     return await this.$router.push({ name: 'home-folder' })
   } catch (error) {
     return Promise.reject(`[scripts|home] ${error}`)

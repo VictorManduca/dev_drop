@@ -5,7 +5,12 @@
 </style>
 
 <script>
-import { createFile, deleteFile, getFile } from '../assets/scripts/home-folder'
+import {
+  createFile,
+  deleteFile,
+  getFile,
+  goBack,
+} from '../assets/scripts/home-folder'
 
 import {
   callNewFileApi,
@@ -15,6 +20,8 @@ import {
 export default {
   data: () => {
     return {
+      modelFile: null,
+
       userId: parseInt(localStorage.getItem('usuarioId')),
       file: null,
       favorite: null,
@@ -28,6 +35,8 @@ export default {
 
     callNewFileApi,
     callDeleteFileApi,
+
+    goBack,
   },
 }
 </script>
