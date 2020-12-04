@@ -45,7 +45,7 @@ body {
 
 .shared {
   width: 200px;
-  height: 200px;
+  height: 80px;
   margin: auto;
 }
 
@@ -75,7 +75,8 @@ body {
   /*background-color: red;*/
   width: 849px;
   height: 649px;
-  padding-top: 320px;
+  padding-top: 370px;
+  display: inline-block;
 }
 
 .div_new_folder {
@@ -157,24 +158,34 @@ body {
   padding-top: 1px;
 }
 
-/*links*/
-a:link {
-  color: #ff0000;
-  text-decoration: none;
+@media screen and (max-width: 992px) {
+  .img_new_group {
+    width: 99px;
+    height: 100px;
+    margin: auto;
+  }
 }
-
-a:visited {
-  color: #999999;
-  text-decoration: none;
+@media screen and (max-width: 768px) {
+  .new_group_btn {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+  }
 }
-
-a:hover {
-  color: #000000;
-  text-decoration: none;
+@media screen and (max-width: 768px) {
+  .container_col3 {
+    width: 150px;
+    height: 630px;
+    display: inline-block;
+  }
 }
-
-a:active {
-  color: #00ff00;
-  text-decoration: none;
-  /*background-color:#000000;*/
+@media screen and (max-height: 540px) {
+  .begin {
+    height: 280;
+  }
+}
+@media screen and (max-height: 540px) {
+  .bookmarks {
+    height: 260;
+  }
 }
