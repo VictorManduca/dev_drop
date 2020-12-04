@@ -1,6 +1,6 @@
 <div>
 
-    <div class="container_col1">
+    <div class="container_col1 col-xl-2 col-lg-3 col-md-3">
         <div class="begin">
             <img class="img_home" src="../../static/blue_box.png" alt="">
             <h3 class="texto_begin">Begin</h3>
@@ -16,9 +16,8 @@
         </div>
     </div>
 
-    <div class="container_col2">
-        <div class="central">
-            <b-table :items="items"></b-table>
+    <!--<div class="container_col2 col-xl-8 col-lg-7 col-md-5">-->
+        <div class="central col-xl-8 col-lg-7 col-md-5">
             <div class="div_new_folder">
                 <img class="new_folder" src="../../static/new-folder-9.png" v-on:click="createFolder" v-on:click.right="deleteFolder">
             <!--sem label e sem <a>,só botão-->
@@ -27,9 +26,9 @@
                 <img class="folder" src="../../static/folder.png" alt="" v-on:click="goHomePasta">
             </div>
         </div>
-    </div>
+    <!--</div>-->
 
-    <div class="container_col3">
+    <div class="container_col3 col-xl-2 col-lg-2 col-md-4">
         <div class="group">
             <img class="img_group" src="../../static/group-icon.png" alt="">
             <h2 class="texto_group">Groups</h2>
