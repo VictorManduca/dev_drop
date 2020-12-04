@@ -26,7 +26,9 @@
 
   <div class="container_col2">
     <div class="central">
-      <b-table :items="items" :fields="fields"> </b-table>
+      <b-table :items="items" :fields="fields">
+        <template #cell(name)="data"> {{ data.item.Nome }} </template>
+      </b-table>
 
       <div class="div_new_folder">
         <b-icon icon="folder-plus"></b-icon>
