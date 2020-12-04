@@ -1,5 +1,9 @@
 <div>
-  <b-table :items="items" :fields="fields"></b-table>
+  <b-table :items="items" :fields="fields">
+    <template #cell(name)="data"> {{ data.item.Nome }} </template>
+    <template #cell(favorite)="data"> {{ data.item.eFavorito }} </template>
+    <template #cell(image)="data"> {{ (data.item.Arquivo) }} </template>
+  </b-table>
 
   <b-button v-on:click="modelFile = !modelFile">Send File</b-button>
   <b-button type="button" v-on:click="goBack">Go back</b-button>

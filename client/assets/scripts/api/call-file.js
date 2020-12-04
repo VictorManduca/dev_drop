@@ -10,6 +10,13 @@ export function callNewFileApi(payload) {
   })
 }
 
+export function callGetAllFoldersFile(userId, folderId) {
+  return axios({
+    method: 'GET',
+    url: `${environment.urlBase}/file/all/user/${userId}/folder/${folderId}`,
+  })
+}
+
 export function callDeleteFileApi(fileId) {
   return axios({
     method: 'DELETE',

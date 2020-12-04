@@ -1,4 +1,8 @@
-import { callNewFileApi, callDeleteFileApi } from './api/call-file'
+import {
+  callNewFileApi,
+  callGetAllFoldersFile,
+  callDeleteFileApi,
+} from './api/call-file'
 
 export async function getFile(event) {
   const file = event.target.files[0]
@@ -32,6 +36,21 @@ export async function createFile() {
 
     if (responseApi.status == 201) {
       return this.$toast.success('File Created')
+    } else {
+      return this.$toast.error('Something went wrong')
+    }
+  } catch (error) {
+    console.error({ error: `[scripts|home] ${error}` })
+    return this.$toast.error('Something went wrong')
+  }
+}
+
+export async function getFiles(userId, folderId) {
+  try {
+    const responseApi = await callGetAllFoldersFile(userId, folderId)
+
+    if (responseApi.status == 200) {
+      return responseApi.data
     } else {
       return this.$toast.error('Something went wrong')
     }
