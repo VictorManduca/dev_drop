@@ -5,27 +5,42 @@
 </style>
 
 <script>
-import { createFolder, deleteFolder, goHomePasta } from '../assets/scripts/home'
-import { callNewFolderApi, callDeleteFolderApi } from '../assets/scripts/api/call-new-folder'
+import {
+  createFolder,
+  deleteFolder,
+  createFile,
+  getFile,
+  goHomeFolder,
+} from '../assets/scripts/home'
 
-export default{
+import {
+  callNewFolderApi,
+  callDeleteFolderApi,
+} from '../assets/scripts/api/call-new-folder'
+
+export default {
   data: () => {
     return {
-      //todas as variáveis
-      usuarioId: null,
-      arquivoId: null,
-      tipoCategoriaId: null,
-      nome: null,
-      items: [{nome: "silvao o homi", descricao: "velho da rola grande"}]
+      modalFile: null,
+      modelFolder: null,
+
+      userId: parseInt(localStorage.getItem('usuarioId')),
+      file: null,
+      favorite: null,
+      name: null,
+      folderName: null,
+      items: [],
     }
   },
-  //colocar todas as funções
   methods: {
+    createFile,
+    getFile,
+    goHomeFolder,
+
     createFolder,
     deleteFolder,
     callNewFolderApi,
     callDeleteFolderApi,
-    goHomePasta
   },
 }
 </script>
