@@ -9,15 +9,11 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER
         },
-        ArquivoID: {
-          allowNull: false,
-          type: Sequelize.INTEGER
-        },
         UsuarioID: {
           allowNull: false,
           type: Sequelize.INTEGER
         },
-        TipoCategoriaID: {
+        TipoCategoriaIndice: {
           type: Sequelize.INTEGER
         },
         Nome: {
@@ -31,28 +27,6 @@ module.exports = {
           name: 'pasta_UsuarioID_fk',
           references: {
             table: 'usuario',
-            field: 'ID'
-          }
-        })
-      })
-      .then(async _ => {
-        return await queryInterface.addConstraint('pasta', {
-          type: 'foreign key',
-          fields: ['ArquivoID'],
-          name: 'pasta_ArquivoID_fk',
-          references: {
-            table: 'arquivo',
-            field: 'ID'
-          }
-        })
-      })
-      .then(async _ => {
-        return await queryInterface.addConstraint('pasta', {
-          type: 'foreign key',
-          fields: ['TipoCategoriaID'],
-          name: 'pasta_TipoCategoriaID_fk',
-          references: {
-            table: 'tipo_categoria',
             field: 'ID'
           }
         })

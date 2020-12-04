@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   arquivo.init(
     {
       UsuarioID: DataTypes.INTEGER,
+      PastaID: DataTypes.INTEGER,
       Arquivo: DataTypes.BLOB('long'),
       eFavorito: DataTypes.TINYINT,
       Nome: DataTypes.STRING

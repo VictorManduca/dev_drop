@@ -13,6 +13,10 @@ module.exports = {
           allowNull: false,
           type: Sequelize.INTEGER
         },
+        PastaID: {
+          allowNull: false,
+          type: Sequelize.INTEGER
+        },
         Arquivo: {
           type: Sequelize.BLOB('long')
         },
@@ -30,6 +34,17 @@ module.exports = {
           name: 'arquivo_UsuarioID_fk',
           references: {
             table: 'usuario',
+            field: 'ID'
+          }
+        })
+      })
+      .then(async _ => {
+        return await queryInterface.addConstraint('arquivo', {
+          type: 'foreign key',
+          fields: ['PastaID'],
+          name: 'arquivo_PastaID_fk',
+          references: {
+            table: 'pasta',
             field: 'ID'
           }
         })

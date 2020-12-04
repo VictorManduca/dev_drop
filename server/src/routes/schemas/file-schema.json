@@ -7,12 +7,14 @@
 	"default": {},
 	"examples": [{
 		"usuarioId": 1,
+		"pastaId": 1,
 		"eFavorito": 0,
 		"nome": "festa casamento",
 		"arquivo": "base64"
 	}],
 	"required": [
 		"usuarioId",
+		"pastaId",
 		"eFavorito",
 		"nome",
 		"arquivo"
@@ -22,6 +24,16 @@
 			"$id": "#/properties/usuarioId",
 			"type": "integer",
 			"title": "The usuarioId schema",
+			"description": "An explanation about the purpose of this instance.",
+			"default": 0,
+			"examples": [
+				1
+			]
+		},
+		"pastaId": {
+			"$id": "#/properties/pastaId",
+			"type": "integer",
+			"title": "The pastaId schema",
 			"description": "An explanation about the purpose of this instance.",
 			"default": 0,
 			"examples": [

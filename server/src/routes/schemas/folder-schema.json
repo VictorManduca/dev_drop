@@ -8,13 +8,12 @@
 	"examples": [{
 		"usuarioId": 1,
 		"arquivoId": 1,
-		"tipoCategoriaId": 1,
+		"tipoCategoriaIndice": 1,
 		"nome": "fotos da escola"
 	}],
 	"required": [
 		"usuarioId",
-		"arquivoId",
-		"tipoCategoriaId",
+		"tipoCategoriaIndice",
 		"nome"
 	],
 	"properties": {
@@ -38,10 +37,10 @@
 				1
 			]
 		},
-		"tipoCategoriaId": {
-			"$id": "#/properties/tipoCategoriaId",
+		"tipoCategoriaIndice": {
+			"$id": "#/properties/tipoCategoriaIndice",
 			"type": "integer",
-			"title": "The tipoCategoriaId schema",
+			"title": "The tipoCategoriaIndice schema",
 			"description": "An explanation about the purpose of this instance.",
 			"default": 0,
 			"examples": [

@@ -13,9 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   pasta.init(
     {
-      ArquivoID: DataTypes.INTEGER,
       UsuarioID: DataTypes.INTEGER,
-      TipoCategoriaID: DataTypes.INTEGER,
+      TipoCategoriaIndice: DataTypes.INTEGER,
       Nome: DataTypes.STRING
     },
     {

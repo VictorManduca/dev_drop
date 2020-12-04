@@ -3,6 +3,7 @@ import models from '../models'
 export async function saveFile(payload) {
   return await models.arquivo.create({
     UsuarioID: payload.usuarioId,
+    PastaID: payload.pastaId,
     eFavorito: payload.eFavorito,
     Nome: payload.nome,
     Arquivo: payload.arquivo
@@ -21,6 +22,7 @@ export async function updateFile(payload, params) {
   return await models.arquivo.update(
     {
       UsuarioID: payload.usuarioId,
+      PastaID: payload.pastaId,
       eFavorito: payload.eFavorito,
       Nome: payload.nome,
       Arquivo: payload.arquivo

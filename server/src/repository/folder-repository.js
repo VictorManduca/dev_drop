@@ -3,8 +3,7 @@ import models from '../models'
 export async function saveFolder(payload) {
   return await models.pasta.create({
     UsuarioID: payload.usuarioId,
-    ArquivoID: payload.arquivoId,
-    TipoCategoriaID: payload.tipoCategoriaId,
+    TipoCategoriaIndice: payload.tipoCategoriaIndice,
     Nome: payload.nome
   })
 }
@@ -21,8 +20,7 @@ export async function updateFolder(payload, params) {
   return await models.pasta.update(
     {
       UsuarioID: payload.usuarioId,
-      ArquivoID: payload.arquivoId,
-      TipoCategoriaID: payload.tipoCategoriaId,
+      TipoCategoriaIndice: payload.tipoCategoriaIndice,
       Nome: payload.nome
     },
     { where: params }

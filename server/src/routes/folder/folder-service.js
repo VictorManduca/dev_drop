@@ -3,11 +3,7 @@ import { oneFile } from '../../repository/file-repository'
 import { oneUser } from '../../repository/user'
 
 export async function checkIfDataExists(payload) {
-  if (
-    (await checkIfCategoryExists(payload.tipoCategoriaId)) &&
-    (await checkIfFileExists(payload.arquivoId)) &&
-    (await checkIfUserExists(payload.usuarioId))
-  ) {
+  if (await checkIfUserExists(payload.usuarioId)) {
     return true
   } else {
     return false
