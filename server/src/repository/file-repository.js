@@ -14,6 +14,10 @@ export async function allFiles() {
   return await models.arquivo.findAll()
 }
 
+export async function allFilesWhere(params) {
+  return await models.arquivo.findAll({ where: params })
+}
+
 export async function oneFile(params) {
   return await models.arquivo.findOne({ where: params })
 }

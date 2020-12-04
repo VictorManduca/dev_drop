@@ -8,6 +8,7 @@ import { oneUser } from '../../repository/user'
 import {
   saveFile,
   allFiles,
+  allFilesWhere,
   oneFile,
   updateFile,
   deleteFile
@@ -35,7 +36,8 @@ export async function create(req, res, next) {
 
 export async function all(req, res, next) {
   try {
-    const files = await allFiles()
+    const { userId, folderId } = req.params
+    const files = await allFilesWhere({ usuarioId: userId, pastaId: folderId })
 
     if (files.length == 0) {
       return callback.withData(res, [])

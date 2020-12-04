@@ -29,7 +29,7 @@ router.put('/drop/category/:id', category.update)
 router.delete('/drop/category/:id', category.destroy)
 
 router.post('/drop/file', file.create)
-router.get('/drop/file', file.all)
+router.get('/drop/file/all/user/:userId/folder/:folderId', file.all)
 router.get('/drop/file/:id', file.one)
 router.put('/drop/file/:id', file.update)
 router.delete('/drop/file/:id', file.destroy)
