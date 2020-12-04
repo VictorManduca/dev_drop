@@ -9,10 +9,10 @@ export function callNewFileApi(payload) {
   })
 }
 
-export function callDeleteFileApi(payload) {
+export function callDeleteFileApi(fileId) {
   return axios({
     method: 'DELETE',
-    url: `${ environment.urlBase }/file/id:`,
+    url: `${ environment.urlBase }/file/${fileId}`,
     data: payload
   })
 }

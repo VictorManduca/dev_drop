@@ -9,10 +9,9 @@ export function callNewFolderApi(payload) {
   })
 }
 
-export function callDeleteFolderApi(payload) {
+export function callDeleteFolderApi(folderId) {
   return axios({
     method: 'DELETE',
-    url: `${ environment.urlBase }/folder/id:`,
-    data: payload
+    url: `${ environment.urlBase }/folder/${folderId}`,
   })
 }

@@ -1,12 +1,15 @@
-import { callNewFileApi } from './api/call-file'
-import { callDeleteFileApi } from './api/call-file'
+import { callNewFileApi, callDeleteFileApi } from './api/call-file'
 
 export async function createFile() {
-    try{ //função que chama API
-        const responseApi = await callNewFileApi({ usuarioId: this.usuarioId, eFavorito: this.eFavorito, nome: this.nome, arquivo: this.arquivo })
+  this.$refs.input.value = null
+  this.$refs.input.click()
 
-        this.$refs.input.value = null
-        this.$refs.input.click()
+    try{ //função que chama API
+        const responseApi = await callNewFileApi({ 
+          usuarioId: this.usuario, 
+          eFavorito: this.eFavorito, 
+          nome: this.nome, 
+          arquivo: this.arquivo })
 
         if (responseApi.status == 201) {
             this.$toast.success('File Created')
@@ -27,7 +30,7 @@ export async function deleteFile() {
 
       if (responseApi.status == 201) {
         this.$toast.success('File Deleted')
-        this.$router.push({ name: 'homePasta' })
+        this.$router.push({ name: 'home-folder' })
       } else {
         this.$toast.error('Not deleted')
       }

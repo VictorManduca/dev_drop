@@ -5,7 +5,7 @@
 </style>
 
 <script>
-import { createFolder, deleteFolder } from '../assets/scripts/home'
+import { createFolder, deleteFolder, goHomePasta } from '../assets/scripts/home'
 import { callNewFolderApi, callDeleteFolderApi } from '../assets/scripts/api/call-new-folder'
 
 export default{
@@ -15,7 +15,8 @@ export default{
       usuarioId: null,
       arquivoId: null,
       tipoCategoriaId: null,
-      nome: null
+      nome: null,
+      items: [{nome: "silvao o homi", descricao: "velho da rola grande"}]
     }
   },
   //colocar todas as funções

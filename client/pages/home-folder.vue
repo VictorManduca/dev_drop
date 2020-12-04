@@ -1,12 +1,12 @@
-<template src="../assets/templates/homePasta.html"></template>
+<template src="../assets/templates/home-folder.html"></template>
 
 <style>
-@import '../assets/styles/homePasta.css';
+@import '../assets/styles/home-folder.css';
 </style>
 
 <script>
-import { createFolder, deleteFolder } from '../assets/scripts/homePasta'
-import { callNewFolderApi, callDeleteFolderApi } from '../assets/scripts/api/call-file'
+import { createFile, deleteFile } from '../assets/scripts/home-folder'
+import { callNewFileApi, callDeleteFileApi } from '../assets/scripts/api/call-file'
 
 export default{
   data: () => {
@@ -15,8 +15,7 @@ export default{
       usuarioId: null,
       eFavorito: null,
       arquivo: null,
-      nome: null,
-      image: ''
+      nome: null
     }
   },
   //colocar todas as funções

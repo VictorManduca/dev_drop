@@ -18,6 +18,7 @@
 
     <div class="container_col2">
         <div class="central">
+            <b-table :items="items"></b-table>
             <div class="div_new_folder">
                 <img class="new_folder" src="../../static/new-folder-9.png" v-on:click="createFolder" v-on:click.right="deleteFolder">
             <!--sem label e sem <a>,só botão-->
@@ -42,5 +43,5 @@
             </div>
         </div>
     </div>
-
+    
 </div>
